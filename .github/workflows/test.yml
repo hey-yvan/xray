@@ -40,7 +40,7 @@ jobs:
     steps:
       - name: Checkout code
         # actions/checkout@v6.0.2 (pinned to commit SHA for security)
-        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
 
       - name: Cache apt packages
         id: cache-apt
@@ -67,7 +67,7 @@ jobs:
     steps:
       - name: Checkout code
         # actions/checkout@v6.0.2 (pinned to commit SHA for security)
-        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
 
       - name: Cache shfmt binary
         id: cache-shfmt
@@ -108,7 +108,7 @@ jobs:
     steps:
       - name: Checkout code
         # actions/checkout@v6.0.2 (pinned to commit SHA for security)
-        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
 
       - name: Cache apt packages
         id: cache-apt-bats
@@ -142,7 +142,7 @@ jobs:
       - name: Upload test results
         if: always()
         # actions/upload-artifact@v7.0.0 (pinned to commit SHA for security)
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
         with:
           name: test-results-${{ matrix.ubuntu-version }}
           path: artifacts/unit/*.xml
@@ -157,7 +157,7 @@ jobs:
     steps:
       - name: Checkout code
         # actions/checkout@v6.0.2 (pinned to commit SHA for security)
-        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
 
       - name: Cache apt packages
         id: cache-apt-integration
@@ -191,7 +191,7 @@ jobs:
       - name: Upload integration test results
         if: always()
         # actions/upload-artifact@v7.0.0 (pinned to commit SHA for security)
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
         with:
           name: integration-test-results
           path: artifacts/integration/*.xml
@@ -209,7 +209,7 @@ jobs:
     steps:
       - name: Checkout code
         # actions/checkout@v6.0.2 (pinned to commit SHA for security)
-        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
 
       - name: Install coverage dependencies
         run: |
@@ -365,7 +365,7 @@ jobs:
       - name: Upload coverage artifacts
         if: always()
         # actions/upload-artifact@v7.0.0 (pinned to commit SHA for security)
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
         with:
           name: coverage-results
           path: artifacts/coverage/**
@@ -379,7 +379,7 @@ jobs:
     steps:
       - name: Checkout code
         # actions/checkout@v6.0.2 (pinned to commit SHA for security)
-        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
 
       - name: Run ShellCheck security checks
         run: |
@@ -402,7 +402,7 @@ jobs:
       - name: Upload security report
         if: always()
         # actions/upload-artifact@v7.0.0 (pinned to commit SHA for security)
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
         with:
           name: security-report
           path: shellcheck-report.json
